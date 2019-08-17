@@ -1,6 +1,7 @@
 import React from 'react';
-import {Breadcrumb, Layout} from 'antd';
+import {Breadcrumb, Layout, Button} from 'antd';
 import ClockElem from './ClockElem.jsx';
+
 
 const {Content} = Layout;
 
@@ -15,6 +16,11 @@ export default class ContentElem extends React.Component {
                 </Breadcrumb>
                 <div style={{padding: 24, background: '#fff', minHeight: 360}}>
                     Bill is a cat.
+                    <Button>Clock in</Button>
+                    <Button>Clock out</Button>
+                    <Button>Pause</Button>
+                    <Button>Resume</Button>
+
                     <ClockElem/>
                 </div>
             </Content>

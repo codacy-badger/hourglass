@@ -11,13 +11,32 @@ export default class SiderElem extends React.Component {
     };
 
     onCollapse = collapsed => {
+        if (!this.state.collapsed) {
+            document.getElementById("notSider").style.marginLeft = "80px";
+        }
+        else{
+            document.getElementById("notSider").style.marginLeft = "200px";
+        }
         console.log(collapsed);
         this.setState({collapsed});
+
     };
 
     render() {
         return (
-            <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
+            <Sider
+                collapsible
+                collapsed={this.state.collapsed}
+                onCollapse={this.onCollapse}
+                style={{
+                    overflow: 'auto',
+                    height: '100vh',
+                    position: 'fixed',
+                    left: 0,
+                }}
+                breakpoint="lg"
+                collapsedWidth="80px"
+            >
                 <div className="logo"/>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1">
